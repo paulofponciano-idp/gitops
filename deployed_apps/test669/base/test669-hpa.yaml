@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test669-hpa
+  namespace: test669
+  labels:
+    app: test669
+    version: 0.0.1
+    backstage.io/kubernetes-id: test669
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: test669
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75

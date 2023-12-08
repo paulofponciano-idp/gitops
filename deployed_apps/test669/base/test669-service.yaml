@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test669-service
+  namespace: test669
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: test669.pauloponciano.digital
+  labels:
+    app: test669
+    version: 0.0.1
+    backstage.io/kubernetes-id: test669
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: test669
