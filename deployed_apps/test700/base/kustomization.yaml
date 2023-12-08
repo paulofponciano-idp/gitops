@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test700
+resources:
+  - namespace.yaml
+  - test700-quota.yaml
+  - test700-deployment.yaml
+  - test700-service.yaml
+  - test700-vs.yaml
+  - test700-hpa.yaml
