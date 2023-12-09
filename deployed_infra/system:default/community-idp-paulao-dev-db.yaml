@@ -6,7 +6,7 @@ metadata:
   name: paulao-dev-postgres-db
   namespace: environment-crossplane
   labels:
-    backstage.io/kubernetes-id: paulao-rds
+    backstage.io/kubernetes-id: rds
 spec:
   compositionSelector:
     matchLabels:
