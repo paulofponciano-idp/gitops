@@ -5,4 +5,4 @@ resources:
 images:
 - name: webgo
   newName: paulofponciano/paulao
-  newTag: latest
+  newTag: 0aab22c2
