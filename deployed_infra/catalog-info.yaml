@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+spec:
+  system: "system:default/community-idp"
+  type:  
+  lifecycle: 
+  owner: "sre" # fix it
+metadata:
+  name: 
+  annotations:
+    github.com/project-slug: undefined/undefined
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: undefined-dev
+    backstage.io/kubernetes-id: 
+  tags:
+    - rds
+    # - system:default/community-idp
+    - 
+    - 
