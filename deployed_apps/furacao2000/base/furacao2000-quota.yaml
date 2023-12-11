@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: furacao2000-quota
+  namespace: furacao2000
+  labels:
+    kubernetes.io/metadata.name: furacao2000
+    backstage.io/kubernetes-id: furacao2000
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
