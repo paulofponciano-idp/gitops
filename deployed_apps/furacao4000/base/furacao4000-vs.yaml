@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: furacao4000-vs
+  namespace: furacao4000
+  labels:
+    app: furacao4000
+    version: 0.0.1
+    backstage.io/kubernetes-id: furacao4000
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - furacao4000.pauloponciano.digital
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: furacao4000-service
+      weight: 100
