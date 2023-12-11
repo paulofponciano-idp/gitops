@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: valcann-app
+  labels:
+    kubernetes.io/metadata.name: valcann-app
+    backstage.io/kubernetes-id: valcann-app
+    istio-injection: enabled
+spec:
+  finalizers:
+  - kubernetes
