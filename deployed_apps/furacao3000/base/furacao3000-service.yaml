@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: furacao3000-service
+  namespace: furacao3000
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: furacao3000.pauloponciano.digital
+  labels:
+    app: furacao3000
+    version: 0.0.1
+    backstage.io/kubernetes-id: furacao3000
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: furacao3000
