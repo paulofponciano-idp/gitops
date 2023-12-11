@@ -5,4 +5,4 @@ resources:
 images:
 - name: webgo
   newName: paulofponciano/furacao4000
-  newTag: latest
+  newTag: 6e15450a
