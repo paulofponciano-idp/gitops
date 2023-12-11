@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test999-vs
+  namespace: test999
+  labels:
+    app: test999
+    version: 0.0.1
+    backstage.io/kubernetes-id: test999
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - test999.pauloponciano.digital
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: test999-service
+      weight: 100
