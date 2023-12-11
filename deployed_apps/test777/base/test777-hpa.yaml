@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test777-hpa
+  namespace: test777
+  labels:
+    app: test777
+    version: 0.0.1
+    backstage.io/kubernetes-id: test777
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: test777
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75
