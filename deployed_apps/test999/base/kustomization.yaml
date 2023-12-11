@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test999
+resources:
+  - namespace.yaml
+  - test999-quota.yaml
+  - test999-deployment.yaml
+  - test999-service.yaml
+  - test999-vs.yaml
+  - test999-hpa.yaml
