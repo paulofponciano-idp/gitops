@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test555-vs
+  namespace: test555
+  labels:
+    app: test555
+    version: 0.0.1
+    backstage.io/kubernetes-id: test555
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - test555.pauloponciano.digital
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: test555-service
+      weight: 100
