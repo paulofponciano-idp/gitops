@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/paulofponciano-idp/gitops
     targetRevision: HEAD
-    path: deployed_apps/paulao5/base
+    path: deployed_apps/paulao5/overlays
   destination:
     server: https://kubernetes.default.svc
     namespace: default
