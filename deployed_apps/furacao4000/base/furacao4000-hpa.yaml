@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: furacao4000-hpa
+  namespace: furacao4000
+  labels:
+    app: furacao4000
+    version: 0.0.1
+    backstage.io/kubernetes-id: furacao4000
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: furacao4000
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75

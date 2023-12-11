@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: furacao4000
+  labels:
+    kubernetes.io/metadata.name: furacao4000
+    backstage.io/kubernetes-id: furacao4000
+    istio-injection: enabled
+spec:
+  finalizers:
+  - kubernetes
