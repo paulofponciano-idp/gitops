@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test777-vs
+  namespace: test777
+  labels:
+    app: test777
+    version: 0.0.1
+    backstage.io/kubernetes-id: test777
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - test777.pauloponciano.digital
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: test777-service
+      weight: 100
