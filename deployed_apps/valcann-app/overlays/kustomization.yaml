@@ -5,4 +5,4 @@ resources:
 images:
 - name: webgo
   newName: paulofponciano/valcann-app
-  newTag: latest
+  newTag: 8035c025
