@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: test111-gw
+  namespace: test111
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - test111.pauloponciano.digital
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - test111.pauloponciano.digital
+      port:
+        name: https-workloads
+        number: 443
+        protocol: HTTP
+      tls:
+        mode: PASSTHROUGH
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test111-vs
+  namespace: test111
+  labels:
+    app: test111
+    version: 0.0.1
+    backstage.io/kubernetes-id: test111
+spec:
+  gateways:
+  - test111-gw
+  hosts:
+  - test111.pauloponciano.digital
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: test111-service
+      weight: 100
