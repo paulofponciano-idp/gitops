@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test222-hpa
+  namespace: test222
+  labels:
+    app: test222
+    version: 0.0.1
+    backstage.io/kubernetes-id: test222
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: test222
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75
