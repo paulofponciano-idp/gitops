@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: valcann-app-quota
+  namespace: valcann-app
+  labels:
+    kubernetes.io/metadata.name: valcann-app
+    backstage.io/kubernetes-id: valcann-app
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
