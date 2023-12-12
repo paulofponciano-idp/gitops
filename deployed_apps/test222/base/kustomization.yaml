@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test222
+resources:
+  - namespace.yaml
+  - test222-quota.yaml
+  - test222-deployment.yaml
+  - test222-service.yaml
+  - test222-vs.yaml
+  - test222-hpa.yaml
