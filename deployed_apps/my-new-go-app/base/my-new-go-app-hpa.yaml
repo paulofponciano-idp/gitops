@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-new-go-app-hpa
+  namespace: my-new-go-app
+  labels:
+    app: my-new-go-app
+    version: 0.0.1
+    backstage.io/kubernetes-id: my-new-go-app
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: my-new-go-app
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75
